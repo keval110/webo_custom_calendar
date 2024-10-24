@@ -1,5 +1,4 @@
 ## webo_custom_calendar
-https://raw.githubusercontent.com/El-Mazouzi/custom_date_range_picker/master/screenshot.jpg
 ## Usage
 
 ```dart
