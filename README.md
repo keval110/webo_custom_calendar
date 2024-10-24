@@ -3,34 +3,25 @@
 
 ```dart
 ...
-  floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showCustomDateRangePicker(
-            context,
-            dismissible: true,
-            minimumDate: DateTime.now().subtract(const Duration(days: 30)),
-            maximumDate: DateTime.now().add(const Duration(days: 30)),
-            endDate: endDate,
-            startDate: startDate,
-            backgroundColor: Colors.white,
-            primaryColor: Colors.green,
-            onApplyClick: (start, end) {
-              setState(() {
-                endDate = end;
-                startDate = start;
-              });
-            },
-            onCancelClick: () {
-              setState(() {
-                endDate = null;
-                startDate = null;
-              });
-            },
-          );
-        },
-        tooltip: 'choose date Range',
-        child: const Icon(Icons.calendar_today_outlined, color: Colors.white),
-      ),
+  void showDatePicker() {
+    showCustomDateRangePicker(
+      context,
+      dismissible: true,
+      minimumDate: DateTime.now().subtract(const Duration(days: 365)),
+      maximumDate: DateTime.now().add(const Duration(days: 0)),
+      endDate: end,
+      startDate: start,
+      backgroundColor: Colors.grey[200]!, // Replace with AppColors.primaryShade1
+      primaryColor: Colors.deepPurple,    // Replace with AppColors.primaryShade9
+      onApplyClick: (startDate, endDate) {
+        setState(() {
+          start = startDate;
+          end = endDate;
+        });
+      },
+      onCancelClick: () {},
+    );
+  }
 ```
 
 # Function: showCustomDateRangePicker
